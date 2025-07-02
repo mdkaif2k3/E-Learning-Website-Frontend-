@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>LearnNova</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-primary">
+    <div class="container-xxxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar Start -->
+        <div class="container-fluid nav-bar bg-transparent mt-3">
+            <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
+                <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
+                    <div class="icon p-2 me-2">
+                        <img class="img-fluid" src="img/icon-logo.png" alt="Icon" style="width: 30px; height: 30px;">
+                    </div>
+                    <h1 class="m-0 text-primary">LearnNova</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Courses</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="property-list.html" class="dropdown-item">Web Development</a>
+                                <a href="property-type.html" class="dropdown-item">Cyber Security</a>
+                                <a href="property-agent.html" class="dropdown-item">Machine Learning</a>
+                            </div>
+                        </div>
+                        <a href="#about" class="nav-item nav-link">About</a>
+                    </div>
+                    <input placeholder="SEARCH..." class="search" name="text" type="text">
+                    <button type="button" class="btn btn-primary px-3 d-none d-lg-flex" data-bs-toggle="modal" data-bs-target="#LoginModal">SIGN IN</button>
+                </div>
+            </nav>
+        </div>
+        <!-- Navbar End -->
+
+        <!-- Course Creation Modal -->
+        <div class="modal fade" id="createCourseModal" tabindex="-1" aria-labelledby="createCourseModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered d-flex justify-content-center">
+            <div class="modal-content">
+            
+                <div class="modal-header">
+                <h5 class="modal-title" id="createCourseModalLabel">Create New Course</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+        
+                <form>
+                <div class="modal-body">
+                    <div class="mb-3">
+                    <label for="courseName" class="form-label">Course Name</label>
+                    <input type="text" class="form-control" id="courseName" placeholder="Enter course title" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="courseDescription" class="form-label">Course Description</label>
+                        <textarea class="form-control" id="courseDescription" rows="4" placeholder="Provide a brief overview of the course" required></textarea>
+                    </div>                  
+        
+                    <div class="mb-3">
+                    <label for="modules" class="form-label">Number of Modules</label>
+                    <input type="number" class="form-control" id="modules" placeholder="e.g., 5" min="1" required>
+                    </div>
+        
+                    <div class="mb-3">
+                    <label for="courseVideos" class="form-label">Upload Course Videos</label>
+                    <input class="form-control" type="file" id="courseVideos" multiple accept="video/*">
+                    <div class="form-text">You can select multiple video files.</div>
+                    </div>
+                </div>
+        
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Create Course</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+                </form>
+                
+            </div>
+            </div>
+        </div>
+
+
+        <!-- Header Start -->
+        <div class="container-fluid header bg-white p-0">
+          <div class="web-header d-flex justify-content-center animated fadeIn pt-4 bg-primary">
+            <h1 class="page-title mx-auto w-100 text-center text-white">Instructor Dashboard</h2>
+          </div>
+      </div>
+      <!-- Header End -->
+      
+        <!-- Main Content -->
+        <main role="main" class="col-lg-8 mx-auto px-3 py-4 w-100" style="max-width: 1500px">
+
+        <!-- Profile Section -->
+        <section class="mb-4 mx-3">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="mb-3"><strong>Welcome, Prof. Jane Smith</strong></h4>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createCourseModal">
+                + Create New Course
+            </button> 
+            </div>
+            <div class="d-flex justify-content-center">
+            <div class="card w-100" style="max-width: 700px;">
+            <div class="card w-100 p-4 d-flex flex-row align-items-center justify-content-center">
+            <img src="img/no_prof.jpg" class="rounded-circle me-4" alt="Profile Picture">
+            <div>
+                <h5 class="mb-1"><strong>Email:</strong> jane@example.com</h3>
+                <h5 class="mb-1"><strong>Instructor ID:</strong> INST10245</h3>
+                <h5 class="mb-0"><strong>Joined:</strong> January 2023</h3>
+            </div>
+            </div>
+            </div>
+            </div>
+        </section>
+        
+        <!-- Course Analytics -->
+      <section class="mb-5">
+        <h4>Course Analytics</h4>
+        <div class="card w-100 p-4">
+          <div class="row">
+            <!-- Bar Chart -->
+            <div class="col-md-6 mb-4">
+              <h6>Student Enrollments</h6>
+              <canvas id="enrollmentBarChart" height="200"></canvas>
+            </div>
+            
+            <!-- Line Chart -->
+            <div class="col-md-6 mb-4">
+              <h6>Performance Over Time</h6>
+              <canvas id="performanceLineChart" height="200"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Courses Created -->
+      <section class="mb-5">
+        <h4>Courses Created</h4>
+        <div class="card w-100 p-3 accordion" id="courseAccordion">
+      
+          <!-- Course 1 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#courseOne" aria-expanded="false" aria-controls="courseOne">
+                Advanced JavaScript <span class="badge bg-primary ms-2">120 Students</span>
+              </button>
+            </h2>
+            <div id="courseOne" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
+                <div class="accordion-body">
+                    <div class="table-responsive">
+                      <table class="table table-hover table-bordered align-middle">
+                        <thead class="table-light">
+                          <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>DOB</th>
+                            <th>Pursuing Degree</th>
+                            <th>Date of Enrollment</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Alice Johnson</td>
+                            <td>alice@email.com</td>
+                            <td>1999-07-15</td>
+                            <td>B.Sc. Computer Science</td>
+                            <td>2024-01-12</td>
+                          </tr>
+                          <tr>
+                            <td>Bob Smith</td>
+                            <td>bob@email.com</td>
+                            <td>1998-11-03</td>
+                            <td>B.Tech Information Tech</td>
+                            <td>2024-01-14</td>
+                          </tr>
+                          <tr>
+                            <td>Charlie Wu</td>
+                            <td>charlie@email.com</td>
+                            <td>2000-02-20</td>
+                            <td>B.Sc. Data Analytics</td>
+                            <td>2024-01-18</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+          </div>
+      
+          <!-- Course 2 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#courseTwo" aria-expanded="false" aria-controls="courseTwo">
+                React for Beginners <span class="badge bg-primary ms-2">85 Students</span>
+              </button>
+            </h2>
+            <div id="courseTwo" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
+                <div class="accordion-body">
+                    <div class="table-responsive">
+                      <table class="table table-hover table-bordered align-middle">
+                        <thead class="table-light">
+                          <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>DOB</th>
+                            <th>Pursuing Degree</th>
+                            <th>Date of Enrollment</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Alice Johnson</td>
+                            <td>alice@email.com</td>
+                            <td>1999-07-15</td>
+                            <td>B.Sc. Computer Science</td>
+                            <td>2024-01-12</td>
+                          </tr>
+                          <tr>
+                            <td>Bob Smith</td>
+                            <td>bob@email.com</td>
+                            <td>1998-11-03</td>
+                            <td>B.Tech Information Tech</td>
+                            <td>2024-01-14</td>
+                          </tr>
+                          <tr>
+                            <td>Charlie Wu</td>
+                            <td>charlie@email.com</td>
+                            <td>2000-02-20</td>
+                            <td>B.Sc. Data Analytics</td>
+                            <td>2024-01-18</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+          </div>
+      
+          <!-- Course 3 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#courseThree" aria-expanded="false" aria-controls="courseThree">
+                Design Thinking <span class="badge bg-primary ms-2">60 Students</span>
+              </button>
+            </h2>
+            <div id="courseThree" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
+                <div class="accordion-body">
+                    <div class="table-responsive">
+                      <table class="table table-hover table-bordered align-middle">
+                        <thead class="table-light">
+                          <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>DOB</th>
+                            <th>Pursuing Degree</th>
+                            <th>Date of Enrollment</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Alice Johnson</td>
+                            <td>alice@email.com</td>
+                            <td>1999-07-15</td>
+                            <td>B.Sc. Computer Science</td>
+                            <td>2024-01-12</td>
+                          </tr>
+                          <tr>
+                            <td>Bob Smith</td>
+                            <td>bob@email.com</td>
+                            <td>1998-11-03</td>
+                            <td>B.Tech Information Tech</td>
+                            <td>2024-01-14</td>
+                          </tr>
+                          <tr>
+                            <td>Charlie Wu</td>
+                            <td>charlie@email.com</td>
+                            <td>2000-02-20</td>
+                            <td>B.Sc. Data Analytics</td>
+                            <td>2024-01-18</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+          </div>
+      
+        </div>
+      </section>
+
+    
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Chart Script -->
+    <script>
+            // Bar Chart: Enrollments
+            const ctxBar = document.getElementById('enrollmentBarChart').getContext('2d');
+            new Chart(ctxBar, {
+                type: 'bar',
+                data: {
+                labels: ['Advanced JS', 'React', 'Design Thinking'],
+                datasets: [{
+                    label: 'Enrollments',
+                    data: [120, 85, 60],
+                    backgroundColor: ['#0d6efd', '#6610f2', '#198754']
+                }]
+                },
+                options: {
+                responsive: true,
+                scales: {
+                    y: {
+                    beginAtZero: true
+                    }
+                }
+                }
+            });
+
+            // Line Chart: Performance Over Time
+            const ctxLine = document.getElementById('performanceLineChart').getContext('2d');
+            new Chart(ctxLine, {
+                type: 'line',
+                data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                datasets: [
+                    {
+                    label: 'Advanced JS',
+                    data: [3.8, 4.2, 4.5, 4.7],
+                    borderColor: '#0d6efd',
+                    backgroundColor: 'rgba(13,110,253,0.2)',
+                    tension: 0.3,
+                    fill: true
+                    },
+                    {
+                    label: 'React',
+                    data: [3.5, 3.9, 4.1, 4.3],
+                    borderColor: '#6610f2',
+                    backgroundColor: 'rgba(102,16,242,0.2)',
+                    tension: 0.3,
+                    fill: true
+                    },
+                    {
+                    label: 'Design Thinking',
+                    data: [3.2, 3.6, 3.9, 4.0],
+                    borderColor: '#198754',
+                    backgroundColor: 'rgba(25,135,84,0.2)',
+                    tension: 0.3,
+                    fill: true
+                    }
+                ]
+                },
+                options: {
+                responsive: true,
+                scales: {
+                    y: {
+                    min: 0,
+                    max: 5,
+                    title: {
+                        display: true,
+                        text: 'Avg. Rating (out of 5)'
+                    }
+                    }
+                }
+                }
+            });
+    </script>
+  </body>
+</html>

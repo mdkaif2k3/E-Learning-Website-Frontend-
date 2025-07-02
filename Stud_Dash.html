@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>LearnNova</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="bg-primary">
+    <div class="container-xxxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar Start -->
+        <div class="container-fluid nav-bar bg-transparent mt-3">
+            <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
+                <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
+                    <div class="icon p-2 me-2">
+                        <img class="img-fluid" src="img/icon-logo.png" alt="Icon" style="width: 30px; height: 30px;">
+                    </div>
+                    <h1 class="m-0 text-primary">LearnNova</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Courses</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="property-list.html" class="dropdown-item">Web Development</a>
+                                <a href="property-type.html" class="dropdown-item">Cyber Security</a>
+                                <a href="property-agent.html" class="dropdown-item">Machine Learning</a>
+                            </div>
+                        </div>
+                        <a href="#about" class="nav-item nav-link">About</a>
+                    </div>
+                    <input placeholder="SEARCH..." class="search" name="text" type="text">
+                    <button type="button" class="btn btn-primary px-3 d-none d-lg-flex" data-bs-toggle="modal" data-bs-target="#LoginModal">SIGN IN</button>
+                </div>
+            </nav>
+        </div>
+        <!-- Navbar End -->
+
+        <!-- Header Start -->
+        <div class="container-fluid header bg-white p-0">
+          <div class="web-header d-flex justify-content-center animated fadeIn pt-4 bg-primary">
+            <h1 class="page-title mx-auto w-100 text-center text-white">Student Dashboard</h2>
+          </div>
+      </div>
+      <!-- Header End -->
+
+        <!-- Main Content -->
+        <main role="main" class="col-lg-8 mx-auto px-3 py-4 w-100" style="max-width: 1500px">
+
+        <!-- Profile Section -->
+        <section class="mb-4 mx-3">
+            <h2 class="mb-3"><strong>Welcome, John Doe</strong></h4>
+            <div class="d-flex justify-content-center">
+            <div class="card w-100" style="max-width: 700px;">
+            <div class="card w-100 p-4 d-flex flex-row align-items-center justify-content-center">
+            <img src="img/no_prof.jpg" class="rounded-circle me-4" alt="Profile Picture">
+            <div>
+                <h5 class="mb-1"><strong>Email:</strong> john@example.com</h3>
+                <h5 class="mb-1"><strong>Student ID:</strong> STU2025101</h3>
+                <h5 class="mb-0"><strong>Joined:</strong> March 2024</h3>
+            </div>
+            </div>
+            </div>
+            </div>
+        </section>
+  
+      <!-- Enrolled Courses Section -->
+      <section class="mb-5">
+        <h4>Enrolled Courses</h4>
+        <div class="card w-100 p-3">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <strong>Intro to Python</strong>
+              <div class="progress mt-2">
+                <div class="progress-bar bg-success" style="width: 70%">70%</div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <strong>UI/UX Design Basics</strong>
+              <div class="progress mt-2">
+                <div class="progress-bar bg-info" style="width: 45%">45%</div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <strong>Data Structures</strong>
+              <div class="progress mt-2">
+                <div class="progress-bar bg-warning" style="width: 30%">30%</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+  
+      <!-- Completed Courses -->
+      <section class="mb-5">
+        <h4>Completed Courses</h4>
+        <div class="card w-100 p-3">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-between">
+              <span>HTML & CSS Fundamentals</span>
+              <span class="badge bg-success">Completed</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Digital Marketing 101</span>
+              <span class="badge bg-success">Completed</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+  
+      <!-- Pending Assignments -->
+      <section class="mb-5">
+        <h4>Pending Assignments</h4>
+        <div class="card w-100 p-3">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <strong>Python Project 1</strong> – Due: April 20, 2025
+            </li>
+            <li class="list-group-item">
+              <strong>UI/UX Wireframe Submission</strong> – Due: April 22, 2025
+            </li>
+            <li class="list-group-item">
+              <strong>Data Structures Quiz</strong> – Due: April 25, 2025
+            </li>
+          </ul>
+        </div>
+      </section>
+  
+      <!-- Announcements / Upcoming Events -->
+      <section class="mb-5">
+        <h4>Announcements</h4>
+        <div class="card w-100 p-3">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              📢 New course: “AI for Beginners” now available!
+            </li>
+            <li class="list-group-item">
+              📅 Final exam schedule will be released on April 18th.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
